@@ -1,12 +1,17 @@
 #coding:utf-8
 import math
 def stringToNums(reData):
+	"""
 	reDatas = reData.split()
 	length = len(reDatas)
 	nums = [0]*length
 	for i in range(length):
 		nums[i] = float(reDatas[i])
 	return nums
+	因为学会了更简洁的表达,所以以上的代码被如下所替换
+	"""
+	import re
+	return [float(i) for i in re.split(r'[\s\,\;]+',reData)]   #运用了正则表达式
 def calVari(nums):
 	averOfNums = sum(nums)/len(nums)
 	sumOfValues = 0
